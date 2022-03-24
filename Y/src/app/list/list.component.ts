@@ -23,7 +23,11 @@ export class ListComponent implements OnInit {
     this.currentPage = page;
     console.log(page);
     const limit = 10;
+<<<<<<< HEAD
     const skip = page * limit;
+=======
+    const skip = (page - 1) * limit;
+>>>>>>> 46bfd05fc3c08057d6b01cc26c118781f9ff2c30
     this._service.games1 = this._service.games(skip, skip + 10);
   }
 }
