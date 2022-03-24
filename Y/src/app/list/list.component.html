@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>All games</h1>
+
+  <ng-container *ngFor="let game of _service.games1">
+    <div class="card mb-3">
+      <div class="row">
+        <div class="col-md-4">
+          <img class="img-fluid" alt="" [src]="game.thumbnail" />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ game.titile }}</h5>
+
+            <p class="card-text">{{ game.short_description }}</p>
+            <p class="card-text">
+              <small class="text-muted">{{ game.publisher }} </small>
+            </p>
+            <a target="_blank" [href]="game.thumbnail" class="btn btn-primary"
+              >View {{ game.titile }}</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <div class="pagination">
+    <button (click)="onPageChange(1)">First</button>
+    <button (click)="onPageChange(currentPage - 1)">Prev</button>
+    <button (click)="onPageChange(currentPage - 1)">
+      {{ currentPage - 1 }}
+    </button>
+    <button style="color: yellow">
+      {{ currentPage }}
+    </button>
+    <button (click)="onPageChange(currentPage + 1)">
+      {{ currentPage + 1 }}
+    </button>
+    <button (click)="onPageChange(currentPage + 1)">Next</button>
+    <button (click)="onPageChange(lastPage)">Last</button>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<h2>Responsive Column Cards</h2>
+<p>Resize the browser window to see the effect.</p>
+
+<div class="row">
+  <ng-container *ngFor="let game of _service.games1.slice(0, 3)">
+    <div class="column">
+      <div class="card">
+        <img src="{{ game.thumbnail }}" alt="" />
+        <p>{{ game.title }}</p>
+        <!-- <p>Some text</p> -->
+        <button type="button" class="btn btn-secondary" routerLink="/all">
+          Show more
+        </button>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- <div class="column">
+    <div class="card">
+      <h3>Card 2</h3>
+      <p>Some text</p>
+      <p>Some text</p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>Card 3</h3>
+      <p>Some text</p>
+      <p>Some text</p>
+    </div>
+  </div> -->
+</div>
